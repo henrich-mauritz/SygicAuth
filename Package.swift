@@ -5,24 +5,20 @@ import PackageDescription
 
 let package = Package(
     name: "SygicAuth",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "SygicAuth",
             targets: ["SygicAuth"]),
     ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
+    dependencies: [],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
+        .binaryTarget(
             name: "SygicAuth",
-            dependencies: []),
-        .testTarget(
-            name: "SygicAuthTests",
-            dependencies: ["SygicAuth"]),
+            url: "https://public.repo.sygic.com/repository/maven-sygic-releases/com/sygic/lib/auth/sygicauth-ios/1.3.1/sygicauth-ios-1.3.1.zip",
+            checksum: "bdf859e364aff9a66dad6b22eb95d7450b5e21efa68c6be6183cd65f17583e79"
+        )
     ]
 )
